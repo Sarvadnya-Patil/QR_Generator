@@ -113,14 +113,14 @@ const ColorPicker = ({ label, color, onChange }) => {
 
     return (
         <div className="space-y-4">
-            <label className="block text-sm font-medium text-white/80">
-                {label}
+            <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest">
+                COLOR SPECTRUM
             </label>
 
             {/* Saturation/Value Area */}
             <div
                 ref={satRef}
-                className="relative h-32 rounded-xl cursor-crosshair overflow-hidden border-2 border-black"
+                className="relative h-32 rounded-lg cursor-crosshair overflow-hidden shadow-sm"
                 style={{ backgroundColor: `hsl(${hsv.h}, 100%, 50%)` }}
                 onMouseDown={(e) => {
                     isDraggingSat.current = true;
@@ -132,15 +132,24 @@ const ColorPicker = ({ label, color, onChange }) => {
 
                 {/* Pointer */}
                 <div
-                    className="absolute w-4 h-4 border-2 border-white rounded-full shadow-[0_0_5px_rgba(0,0,0,0.5)] -translate-x-1/2 translate-y-1/2 pointer-events-none"
+                    className="absolute w-5 h-5 bg-white rounded-md shadow-lg -translate-x-1/2 translate-y-1/2 pointer-events-none flex items-center justify-center"
                     style={{ left: `${hsv.s}%`, bottom: `${hsv.v}%` }}
-                />
+                >
+                    <div
+                        className="w-3 h-3 rounded-sm border border-black/20"
+                        style={{ backgroundColor: color }}
+                    />
+                </div>
             </div>
+
+            <label className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mt-2">
+                HUE SELECTION
+            </label>
 
             {/* Hue Slider */}
             <div
                 ref={hueRef}
-                className="relative h-4 rounded-full cursor-pointer border border-black shadow-inner"
+                className="relative h-4 rounded-md cursor-pointer shadow-inner"
                 style={{
                     background: 'linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%)'
                 }}
@@ -151,15 +160,20 @@ const ColorPicker = ({ label, color, onChange }) => {
             >
                 {/* Hue Pointer */}
                 <div
-                    className="absolute top-1/2 w-5 h-5 bg-white border-2 border-white shadow-md rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                    className="absolute top-1/2 w-6 h-6 bg-white shadow-xl rounded-md -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center"
                     style={{ left: `${(hsv.h / 360) * 100}%` }}
-                />
+                >
+                    <div
+                        className="w-4 h-4 rounded-sm border border-black/20"
+                        style={{ backgroundColor: `hsl(${hsv.h}, 100%, 50%)` }}
+                    />
+                </div>
             </div>
 
             {/* Color Preview & Hex Input */}
             <div className="flex gap-2 items-center">
                 <div
-                    className="h-10 w-10 rounded-lg border-2 border-black shadow-inner flex-shrink-0"
+                    className="h-10 w-10 rounded-lg shadow-inner flex-shrink-0"
                     style={{ backgroundColor: color }}
                 />
                 <div className="relative flex-1">

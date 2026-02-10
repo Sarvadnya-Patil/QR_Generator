@@ -183,17 +183,21 @@ const QRGenerator = () => {
                         </div>
 
                         {/* Color Pickers */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <ColorPicker
-                                label="Foreground Color"
-                                color={fgColor}
-                                onChange={setFgColor}
-                            />
-                            <ColorPicker
-                                label="Background Color"
-                                color={bgColor}
-                                onChange={setBgColor}
-                            />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div className="space-y-2">
+                                <label className="block text-xs font-bold text-accent-400 uppercase tracking-wider mb-2">Foreground</label>
+                                <ColorPicker
+                                    color={fgColor}
+                                    onChange={setFgColor}
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="block text-xs font-bold text-accent-400 uppercase tracking-wider mb-2">Background</label>
+                                <ColorPicker
+                                    color={bgColor}
+                                    onChange={setBgColor}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
