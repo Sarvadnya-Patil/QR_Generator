@@ -172,7 +172,7 @@ const QRGenerator = () => {
                                         key={level}
                                         onClick={() => setErrorLevel(level)}
                                         className={`py-2 px-4 rounded-lg font-medium transition-all duration-300 ${errorLevel === level
-                                            ? 'bg-gradient-to-tr from-blue-900 to-blue-400 text-white shadow-lg'
+                                            ? 'bg-gradient-to-tr from-indigo-900 to-indigo-400 text-white shadow-lg'
                                             : 'bg-white/5 text-white/70 hover:bg-white/10'
                                             }`}
                                     >

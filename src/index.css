@@ -25,7 +25,7 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-tr from-blue-900 to-blue-400 hover:from-blue-700 hover:to-blue-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-out;
+    @apply bg-gradient-to-tr from-indigo-900 to-indigo-400 hover:from-blue-700 hover:to-blue-400 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-out;
   }
 
   .btn-secondary {
@@ -37,7 +37,7 @@
   }
 
   .tab-active {
-    @apply bg-gradient-to-tr from-blue-900 to-blue-400 text-white shadow-lg;
+    @apply bg-gradient-to-tr from-indigo-900 to-indigo-400 text-white shadow-lg;
   }
 
   .tab-inactive {
