@@ -70,7 +70,7 @@ const QRGenerator = () => {
             {/* Left Panel - Controls */}
             <div className="space-y-6">
                 <div className="glass-card p-6 sm:p-8">
-                    <h2 className="text-2xl font-bold mb-6 text-white">Content</h2>
+                    <h2 className="text-xs font-bold text-accent-400 uppercase tracking-widest mb-6">Content</h2>
                     <InputSelector
                         inputType={inputType}
                         setInputType={setInputType}
@@ -89,7 +89,7 @@ const QRGenerator = () => {
                                 </svg>
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-lg font-semibold text-white">Cloud Hosting</h3>
+                                <h3 className="text-base font-semibold text-slate-200">Cloud Hosting</h3>
                                 <p className="text-sm text-white/60 mb-4">
                                     {cloudLink
                                         ? "Your content is hosted in the cloud. The QR code points to the secure link."
@@ -134,12 +134,12 @@ const QRGenerator = () => {
                 )}
 
                 <div className="glass-card p-6 sm:p-8">
-                    <h2 className="text-2xl font-bold mb-6 text-white">Customization</h2>
+                    <h2 className="text-xs font-bold text-accent-400 uppercase tracking-widest mb-6">Customization</h2>
 
                     <div className="space-y-6">
                         {/* Size Slider */}
                         <div>
-                            <label className="block text-sm font-medium text-white/80 mb-2">
+                            <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">
                                 Size: {size}px
                             </label>
                             <input
@@ -149,7 +149,7 @@ const QRGenerator = () => {
                                 step="32"
                                 value={size}
                                 onChange={(e) => setSize(Number(e.target.value))}
-                                className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-accent-500"
+                                className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-accent-500"
                             />
                             <div className="flex justify-between text-xs text-white/50 mt-2">
                                 <span>128px</span>
@@ -163,7 +163,7 @@ const QRGenerator = () => {
 
                         {/* Error Correction Level */}
                         <div>
-                            <label className="block text-sm font-medium text-white/80 mb-3">
+                            <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
                                 Error Correction Level
                             </label>
                             <div className="grid grid-cols-4 gap-2">
@@ -172,8 +172,8 @@ const QRGenerator = () => {
                                         key={level}
                                         onClick={() => setErrorLevel(level)}
                                         className={`py-2 px-4 rounded-lg font-medium transition-all duration-300 ${errorLevel === level
-                                            ? 'bg-gradient-to-tr from-indigo-900 to-indigo-400 text-white shadow-lg'
-                                            : 'bg-white/5 text-white/70 hover:bg-white/10'
+                                            ? 'bg-accent-600/10 text-accent-400 border border-accent-500/30 shadow-sm'
+                                            : 'bg-slate-900/40 text-slate-500 hover:text-slate-300 hover:bg-slate-800/40'
                                             }`}
                                     >
                                         {level}
@@ -206,7 +206,7 @@ const QRGenerator = () => {
             {/* Right Panel - Preview & Download */}
             <div className="space-y-6">
                 <div className="glass-card p-6 sm:p-8">
-                    <h2 className="text-2xl font-bold mb-6 text-white">Preview</h2>
+                    <h2 className="text-xs font-bold text-accent-400 uppercase tracking-widest mb-6">Preview</h2>
                     <div className="flex justify-center">
                         <QRPreview
                             value={qrValue}
