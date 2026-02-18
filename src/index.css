@@ -3,16 +3,22 @@
 @tailwind utilities;
 
 :root {
+  --accent: 245, 158, 11;
+  /* Solar Orange */
+  --accent-color: rgb(var(--accent));
+  --bg-base: #0b0f1a;
+  --bg-glow-1: rgba(var(--accent), 0.05);
+  --bg-glow-2: rgba(217, 119, 6, 0.05);
+
   --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
 }
 
 @layer base {
   body {
-    @apply bg-[#0b0f1a] text-slate-200 min-h-screen;
+    @apply bg-[var(--bg-base)] text-slate-200 min-h-screen;
     background-image:
-      radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.05) 0, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(79, 70, 229, 0.05) 0, transparent 50%);
+      radial-gradient(at 0% 0%, var(--bg-glow-1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, var(--bg-glow-2) 0, transparent 50%);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
@@ -23,11 +29,22 @@
   }
 
   .glass-input {
-    @apply bg-slate-950/40 backdrop-blur-md border border-slate-800/80 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-accent-500/50 focus:border-accent-500/50 transition-all duration-300;
+    @apply bg-slate-950/40 backdrop-blur-md border border-slate-800/80 rounded-lg px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 transition-all duration-300;
+  }
+
+  .glass-input:focus {
+    border-color: rgba(var(--accent), 0.5);
+    --tw-ring-color: rgba(var(--accent), 0.5);
   }
 
   .btn-primary {
-    @apply bg-accent-600 hover:bg-accent-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-accent-500/20 transition-all duration-300;
+    @apply text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-300;
+    background-color: var(--accent-color);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(var(--accent), 0.2);
+    filter: brightness(1.1);
   }
 
   .btn-secondary {
@@ -39,7 +56,9 @@
   }
 
   .tab-active {
-    @apply bg-accent-500/10 text-accent-400 shadow-sm;
+    @apply shadow-sm;
+    background-color: rgba(var(--accent), 0.1);
+    color: var(--accent-color);
   }
 
   .tab-inactive {
@@ -68,7 +87,7 @@
   }
 
   .glow {
-    box-shadow: 0 0 20px rgba(14, 165, 233, 0.1), 0 0 40px rgba(14, 165, 233, 0.05);
+    box-shadow: 0 0 20px rgba(var(--accent), 0.1), 0 0 40px rgba(var(--accent), 0.05);
   }
 }
 
