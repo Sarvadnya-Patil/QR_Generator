@@ -171,9 +171,9 @@ const QRGenerator = () => {
                                     <button
                                         key={level}
                                         onClick={() => setErrorLevel(level)}
-                                        className={`py-2 px-4 rounded-lg font-medium transition-all duration-300 ${errorLevel === level
-                                            ? 'bg-accent-600/10 text-accent-400 border border-accent-500/30 shadow-sm'
-                                            : 'bg-slate-900/40 text-slate-500 hover:text-slate-300 hover:bg-slate-800/40'
+                                        className={`py-2 px-4 rounded-lg font-medium transition-colors duration-150 ease-out outline-none ${errorLevel === level
+                                            ? 'bg-accent-500/10 text-accent-400'
+                                            : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/30'
                                             }`}
                                     >
                                         {level}
