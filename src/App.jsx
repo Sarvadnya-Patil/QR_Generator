@@ -20,7 +20,7 @@ function App() {
 
                 {/* Footer */}
                 <div className="text-center mt-12 text-slate-600 text-sm relative">
-                    <span>Professional QR Generation • Precise Color Control • Cloud Support for Large Data</span>
+                    <span>Professional QR Generation • Precise Color Control</span>
                     <span className='absolute bottom-0 right-0 opacity-40'>| SarvDev</span>
                 </div>
             </div>
